@@ -10,5 +10,8 @@ endif()
 # Hello World
 add_subdirectory("src/HelloWorld")
 
+# Hello World
+add_subdirectory("src/ExceptionPointer")
+
 # System
 add_subdirectory("src/ConsoleColor")
