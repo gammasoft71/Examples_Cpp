@@ -1,11 +1,13 @@
 #include "MessageBox.h"
 
-#if defined(__linx__)
+#if defined(__linux__)
 #include <gtkmm/messagedialog.h>
 
+Glib::RefPtr<Gtk::Application> __application__ = Gtk::Application::create();
+Gtk::Window emptyWindow;
+
 void message_box(const std::string& message) {
-  static Gtk::Window emptyWindow;
-  Gtk::MessageDialog dialog(*emptyWindow, message.c_str(), true /* use_markup */, Gtk::MESSAGE_OTHER, Gtk::BUTTONS_OK, true);
+  Gtk::MessageDialog dialog(emptyWindow, message.c_str(), true, Gtk::MESSAGE_OTHER, Gtk::BUTTONS_OK, true);
   dialog.set_modal();
   dialog.set_position(Gtk::WindowPosition::WIN_POS_CENTER);
   dialog.run();

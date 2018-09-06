@@ -7,7 +7,7 @@ add_executable(Action1 Action1.cpp MessageBox.h MessageBox.cpp MessageBox.mm)
 
 if (APPLE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa")
-else if (MSVC)
+elseif (MSVC)
 else()
   find_package(PkgConfig REQUIRED)
   pkg_check_modules(GTKMM gtkmm-3.0)
