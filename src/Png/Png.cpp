@@ -67,7 +67,7 @@ public:
     png.rawData = std::vector<std::uint8_t>(png.height * png_get_rowbytes(pngStruct, info));
     std::vector<std::uint8_t>::iterator iterator = png.rawData.begin();
     for(int row = 0; row < png.height; row++) {
-      for(int rowByte = 0; rowByte < rowBytes; rowByte++) {
+      for(int rowByte = 0; rowByte < (int)rowBytes; rowByte++) {
         *iterator = rows[row][rowBytes];
         iterator++;
       }

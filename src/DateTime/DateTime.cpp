@@ -1,13 +1,14 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <string>
 
 using namespace std;
 using namespace std::chrono;
 
 std::string to_string(const std::chrono::system_clock::time_point& time_point) {
   time_t time = std::chrono::system_clock::to_time_t(time_point);
-  std::string result = std::ctime(&time);
+  std::string result = ctime(&time);
   return result.substr(0, result.size()-1);;
 }
 

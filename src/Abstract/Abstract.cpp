@@ -14,14 +14,14 @@ public:
   string ReadLine() {
     string line;
     for (int b = ReadByte(); b != -1 && b != '\n'; b = ReadByte())
-      line += static_cast<char32_t>(b);
+      line += static_cast<char>(b);
     return line;
   }
   
   string ReadText() {
     string text;
     for (int b = ReadByte(); b != -1; b = ReadByte())
-      text += static_cast<char32_t>(b);
+      text += static_cast<char>(b);
     return text;
   }
 };
