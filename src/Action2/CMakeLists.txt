@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(Action1)
+project(Action2)
 
 if (MSVC)
 elseif (APPLE)
@@ -14,4 +14,4 @@ endif()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(Action1 Action1.cpp MessageBox.h MessageBoxA.mm MessageBoxL.cpp MessageBoxW.cpp)
+add_executable(Action2 Action2.cpp MessageBox.h MessageBoxA.mm MessageBoxL.cpp MessageBoxW.cpp)
