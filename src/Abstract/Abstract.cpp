@@ -2,6 +2,7 @@
 #include <string>
 
 using namespace std;
+using namespace string_literals;
 
 struct abstract {
   virtual ~abstract() {}
@@ -33,7 +34,7 @@ public:
   int ReadByte() override {
     if (this->iterator == this->end)
       return -1;
-    int value = *this->iterator;
+    auto value = *this->iterator;
     ++this->iterator;
     return value;
   }
@@ -44,7 +45,7 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-  string text = "Line 1\nLine 2\nLine 3";
+  auto text = "Line 1\nLine 2\nLine 3"s;
   
   StringReader sr(text);
   cout << sr.ReadLine() << endl;

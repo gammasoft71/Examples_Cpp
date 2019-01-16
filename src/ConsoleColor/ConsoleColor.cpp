@@ -2,54 +2,62 @@
 #include <string>
 
 using namespace std;
+using namespace string_literals;
+
+/// @remarks To enable ANSI colors on Windows, add following key in the registry :
+/// [HKEY_CURRENT_USER\Console] "VirtualTerminalLevel"=dword:00000001
 
 int main() {
-  cout << string("\033[107m"); // set background with white color
-  cout << string("\033[94m"); // set foreground with blue color
-  cout << string("                                     ▓▓▓▓▓▓▓                                    ") << endl;
-  cout << string("                                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                ") << endl;
-  cout << string("                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                            ") << endl;
-  cout << string("                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                        ") << endl;
-  cout << string("                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                     ") << endl;
-  cout << string("                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                 ") << endl;
-  cout << string("             ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓             ") << endl;
-  cout << string("         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓         ") << endl;
-  cout << string("     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     ") << endl;
-  cout << string("   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ") << endl;
-  cout << string("  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█ ") << endl;
-  cout << string(" ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                        ▓▓▓▓▓▓▓▓▓▓▓█████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                            ▓▓▓▓▓█████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                   ▓▓▓▓▓▓▓▓                  ▄█████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           ▄████████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     ▄████████████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▄████████████████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████   ████████   █████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████████████▀▀▀   ▀▀▀██▀▀▀   ▀▀▀██") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓▓▓▓▓███████████████████         ██         ██") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓██████████████████████████   ████████   █████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓██████████████████████████████▄▄▄████████▄▄▄█████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ██████████████████████▀▀███████████████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ▀██████████████████▀     ▀▀███████████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                 ▀████████████▀▀           ▀▀███████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▄                    ▀▀▀▀▀                    ▀█████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓▓▓▓▓█████▄                                          ▄██████████████████") << endl;
-  cout << string("▓▓▓▓▓▓▓▓▓███████████                                        ████████████████████") << endl;
-  cout << string(" ▓▓▓▓▓████████████████▄                                  ▄██████████████████████") << endl;
-  cout << string("  ███████████████████████▄                            ▄████████████████████████ ") << endl;
-  cout << string("  ▀█████████████████████████▄▄                    ▄▄█████████████████████████▀  ") << endl;
-  cout << string("      ▀████████████████████████████▄▄▄▄▄▄▄▄▄▄████████████████████████████▀      ") << endl;
-  cout << string("          ▀██████████████████████████████████████████████████████████▀▀         ") << endl;
-  cout << string("             ▀▀██████████████████████████████████████████████████▀▀             ") << endl;
-  cout << string("                 ▀▀███████████████████████████████████████████▀                 ") << endl;
-  cout << string("                     ▀████████████████████████████████████▀                     ") << endl;
-  cout << string("                         ▀████████████████████████████▀                         ") << endl;
-  cout << string("                             ▀████████████████████▀                             ") << endl;
-  cout << string("                                ▀▀████████████▀▀                                ") << endl;
-  cout << string("                                    ▀▀████▀▀                                    ") << endl;
-  cout << string("                                  Modern C++17                                  ") << endl;
-  cout << string("\033[90m"); // set foreground with dark gray color
-  cout << string(" C++17 is the name for the most recent revision of the ISO/IEC 14882 standard   ") << endl;
-  cout << string(" for the C++ programming language.                                              ") << endl;
-  cout << string("\033[49m\033[39m"); // Reset color
+  const auto backgroundWhite = "\033[107m"s;
+  const auto foregroundBlue = "\033[94m"s;
+  const auto foregroundDarkGray = "\033[90m"s;
+  const auto resetBackground = "\033[49m"s;
+  const auto resetForeground = "\033[39m"s;
+
+  cout << "                                     "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                                    "s << endl;
+  cout << "                                "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                                "s << endl;
+  cout << "                            "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                            "s << endl;
+  cout << "                        "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                        "s << endl;
+  cout << "                    "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                     "s << endl;
+  cout << "                "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "                 "s << endl;
+  cout << "             "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "             "s << endl;
+  cout << "         "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "         "s << endl;
+  cout << "     "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "     "s << endl;
+  cout << "   "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"s + resetBackground + resetForeground + "  "s << endl;
+  cout << "  "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█"s + resetBackground + resetForeground + " "s << endl;
+  cout << " "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                        ▓▓▓▓▓▓▓▓▓▓▓█████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                                            ▓▓▓▓▓█████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                   ▓▓▓▓▓▓▓▓                  ██████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           █████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     █████████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████   ████████   █████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████████████▀▀▀   ▀▀▀██▀▀▀   ▀▀▀██"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓▓▓▓▓███████████████████         ██         ██"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓▓▓██████████████████████████   ████████   █████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓██████████████████████████████▄▄▄████████▄▄▄█████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓               ███████████████████████████████████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ███████████████████     █████████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                 ██████████████            █████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█                    ██████                   ██████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓▓▓▓▓██████                                          ███████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << ""s + backgroundWhite + foregroundBlue + "▓▓▓▓▓▓▓▓▓███████████                                        ████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << " "s + backgroundWhite + foregroundBlue + "▓▓▓▓▓█████████████████                                  ███████████████████████"s + resetBackground + resetForeground + ""s << endl;
+  cout << "  "s + backgroundWhite + foregroundBlue + "████████████████████████                            █████████████████████████"s + resetBackground + resetForeground + " "s << endl;
+  cout << "  "s + backgroundWhite + foregroundBlue + "████████████████████████████                    ████████████████████████████"s + resetBackground + resetForeground + "  "s << endl;
+  cout << "      "s + backgroundWhite + foregroundBlue + "██████████████████████████████         █████████████████████████████"s + resetBackground + resetForeground + "      "s << endl;
+  cout << "          "s + backgroundWhite + foregroundBlue + "█████████████████████████████████████████████████████████████"s + resetBackground + resetForeground + "         "s << endl;
+  cout << "             "s + backgroundWhite + foregroundBlue + "██████████████████████████████████████████████████████"s + resetBackground + resetForeground + "             "s << endl;
+  cout << "                 "s + backgroundWhite + foregroundBlue + "██████████████████████████████████████████████"s + resetBackground + resetForeground + "                 "s << endl;
+  cout << "                     "s + backgroundWhite + foregroundBlue + "██████████████████████████████████████"s + resetBackground + resetForeground + "                     "s << endl;
+  cout << "                         "s + backgroundWhite + foregroundBlue + "██████████████████████████████"s + resetBackground + resetForeground + "                         "s << endl;
+  cout << "                             "s + backgroundWhite + foregroundBlue + "██████████████████████"s + resetBackground + resetForeground + "                             "s << endl;
+  cout << "                                "s + backgroundWhite + foregroundBlue + "████████████████"s + resetBackground + resetForeground + "                                "s << endl;
+  cout << "                                    "s + backgroundWhite + foregroundBlue + "████████"s + resetBackground + resetForeground + "                                    "s << endl;
+  cout << foregroundDarkGray;
+  cout << "                                  Modern C++17                                  "s << endl;
+  cout << " C++17 is the name for the most recent revision of the ISO/IEC 14882 standard   "s << endl;
+  cout << "                       for the C++ programming language.                        "s << endl;
+  cout << resetBackground + resetForeground;
 }
