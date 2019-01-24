@@ -10,11 +10,14 @@ int SetConsoleOutputCP(int codePage) {return 1;}
 #endif
 
 using namespace std;
+using namespace string_literals;
 
-int main(int argc, char* argv[]) {
-  wstring str = L"\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A\u002c\u0020\u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA\U0001F428\u0021";
+auto main() -> int {
+  auto str = L"\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A\u002c\u0020\u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA\U0001F428\u0021"s;
   
-  wstring result = L"";
+  SetConsoleOutputCP(65001);
+  
+  auto result = L""s;
   for(wchar_t c : str) {
     wstringstream ss;
     ss << c << L" ";

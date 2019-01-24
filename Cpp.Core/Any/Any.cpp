@@ -5,7 +5,7 @@
 using namespace std;
 using namespace std::string_literals;
 
-int main(int argc, char* argv[]) {
+int main() {
   // Create an empty a
   any a;
   cout << "a " << (a.has_value() ? "has" : "hasn't") << " value" << endl;
@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
   cout << "a " << (any_cast<int>(&a) ? "is" : "isn't") << " int" << endl;
   cout << "a " << (any_cast<string>(&a) ? "is" : "isn't") << " string" << endl;
   cout << "a = " << any_cast<int>(a) << endl;
-  int i = any_cast<int32_t>(a);
+  auto i = any_cast<int32_t>(a);
   cout << "i = " << i << endl;
   cout << endl;
 
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 
   // Cast any of type string into a int
   try {
-    int i2 = any_cast<int>(a);
+    auto i2 = any_cast<int>(a);
     cout << "i2 = " << i2 << endl;
   } catch (const bad_any_cast&) {
     cout << "'a' cannot be cast to int" << endl;
@@ -41,4 +41,17 @@ int main(int argc, char* argv[]) {
 
 // This code produces the following output:
 //
-// Hello, World!
+// a hasn't value
+// a =
+// 
+// a is int
+// a isn't string
+// a = 42
+// i = 42
+// 
+// a isn't int
+// a is string
+// a = Hello, World!
+// s = Hello, World!
+// 
+// 'a' cannot be cast to int

@@ -6,13 +6,13 @@
 using namespace std;
 using namespace std::chrono;
 
-std::string to_string(const std::chrono::system_clock::time_point& time_point) {
+auto to_string(const std::chrono::system_clock::time_point& time_point) {
   time_t time = std::chrono::system_clock::to_time_t(time_point);
   std::string result = ctime(&time);
   return result.substr(0, result.size()-1);;
 }
 
-bool roughly_equals(const std::chrono::system_clock::time_point& time, const std::chrono::system_clock::time_point& time_with_window, int window_in_seconds, int frequency_in_seconds) {
+auto roughly_equals(const std::chrono::system_clock::time_point& time, const std::chrono::system_clock::time_point& time_with_window, int window_in_seconds, int frequency_in_seconds) {
   std::chrono::seconds seconds = std::chrono::duration_cast<std::chrono::seconds>(time_with_window - time);
   int delta = seconds.count() % frequency_in_seconds;
   
@@ -21,7 +21,7 @@ bool roughly_equals(const std::chrono::system_clock::time_point& time, const std
   return abs(delta) < window_in_seconds;
 }
 
-int main(int argc, char* argv[]) {
+auto main() -> int {
   int window = 10;
   int freq = 60 * 60 * 2; // 2 hours;
 

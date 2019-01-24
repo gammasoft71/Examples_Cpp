@@ -4,7 +4,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
-message_box::result message_box::show(const std::string& message, const std::string& title) {
+int message_box::show(const std::string& message, const std::string& title) {
   NSAlert *alert = [[[NSAlert alloc] init] autorelease];
   [alert addButtonWithTitle:@"OK"];
   [alert setMessageText:[NSString stringWithUTF8String:title.c_str()]];

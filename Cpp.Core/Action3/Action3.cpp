@@ -15,13 +15,8 @@ static void write_line(const string& message) {
   cout << message << endl;
 }
 
-int main(int argc, char* argv[]) {
-  action<const string&> message_target;
-  
-  if (argc > 1)
-    message_target = [](const string& s) {show_windows_message(s);};
-  else
-    message_target = [](const string& s) {write_line(s);};
+auto main(int argc, char* argv[]) -> int {
+  action<const string&> message_target = argc > 1 ? [](const string& s) {show_windows_message(s);} : [](const string& s) {write_line(s);};
   
   message_target("Hello, World!");
 }

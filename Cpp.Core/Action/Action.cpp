@@ -1,7 +1,5 @@
 #include <iostream>
-#include <list>
 #include <algorithm>
-#include <string>
 
 using namespace std;
 
@@ -9,19 +7,15 @@ void print(const string& s) {
   cout << s << endl;
 }
 
-int main(int argc, char* argv[]) {
-  list<string> names;
-  names.push_back("Bruce");
-  names.push_back("Alfred");
-  names.push_back("Tim");
-  names.push_back("Richard");
+auto main() -> int {
+  auto names = {"Bruce", "Alfred", "Tim", "Richard"};
 
-  // Display the contents of the list using the Print method.
+  // Display the contents of the initializer_list using the print method.
   for_each(names.begin(), names.end(), print);
 
-  // The following demonstrates the lambda of C++ to display the contents of the list to the console.
-  for_each(names.begin(), names.end(), [](const string& s) {
-    std::cout << s << endl;
+  // The following demonstrates the lambda of C++ to display the contents of the initializer_list to the console.
+  for_each(names.begin(), names.end(), [](const auto& s) {
+    cout << s << endl;
   });
 
 }

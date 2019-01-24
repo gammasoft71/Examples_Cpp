@@ -6,7 +6,7 @@
 using namespace std;
 using namespace std::literals;
 
-int main() {
+auto main() -> int {
   auto str = "One Two Three Four\nFive"s;
   regex rgx("(\x9|\xA|\xB|\xC|\xD|\x20)+");
   
@@ -15,7 +15,7 @@ int main() {
     strings.push_back(*it);
   
   cout << "strings::Length = " << strings.size() << endl;
-  for ( auto s : strings)
+  for (auto s : strings)
     std::cout << s << '\n';
 }
 

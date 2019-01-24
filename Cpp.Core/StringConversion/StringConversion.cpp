@@ -5,8 +5,8 @@
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
-  string s = "こんにちは世界！";
+auto main() -> int {
+  auto s = "こんにちは世界！"s;
 
   wstring ws(s.size(), 0);
   mbstowcs(&ws[0], s.c_str(), s.size());

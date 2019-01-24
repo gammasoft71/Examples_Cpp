@@ -28,7 +28,7 @@ vector<string> split_string(const string& str, const vector<char>& splitCharSepa
   return list;
 }
 
-int main() {
+auto main() -> int {
   auto strings = split_string("One Two Three Four\nFive");
   
   cout << "strings::Length = " << strings.size() << endl;
