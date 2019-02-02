@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <any>
 #include <chrono>
 #include <iostream>
@@ -14,7 +15,7 @@ using array_list = vector<any>;
 
 auto to_upper(const string& str) {
   strstream result;
-  for (auto c : str) result << static_cast<char>(toupper(c));
+  for_each(str.begin(), str.end(), [&](const char& value) {result << static_cast<char>(toupper(value));});
   return result.str();
 }
 
