@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 #include <vector>
 #include <string>
 
@@ -13,8 +14,8 @@ auto main() -> int {
   vector<vector<vector<int>>> myArray2(5, {3, {2}});
 
   // make an array from native array
-  int my_native_array[] = {10, 20, 30, 40, 50, 60, 70};
-  vector<int> my_array_3(my_native_array, my_native_array + 7);
+  array<int, 7> my_native_array = {10, 20, 30, 40, 50, 60, 70};
+  vector<int> my_array_3(my_native_array.begin(), my_native_array.end());
 
   // make an array with initialiser list
   vector<int> my_array_4 = {100, 200, 300, 400, 500, 600, 700};
