@@ -4,6 +4,16 @@
 #include <sstream>
 #include <string>
 
+// In the GNU C Library, "major" is defined by <sys/sysmacros.h>. For historical compatibility, it is currently defined by <sys/types.h> as well, 
+// but we plan to remove this soon. To use "major", include <sys/sysmacros.h> directly. If you did not intend to use a system-defined macro "major",
+// you should undefine it after including <sys/types.h>.
+#undef major
+
+// In the GNU C Library, "minor" is defined by <sys/sysmacros.h>. For historical compatibility, it is currently defined by <sys/types.h> as well, 
+// but we plan to remove this soon. To use "minor", include <sys/sysmacros.h> directly. If you did not intend to use a system-defined macro "minor",
+// you should undefine it after including <sys/types.h>.
+#undef minor
+
 class version final {
 public:
   version() = default;
@@ -78,8 +88,8 @@ using namespace std;
 auto main() -> int {
   //cout << "Hello, World!" << endl;
 
-  version v(1, 2, 3);
-  cout << "v = " << v << endl;
+  version v1(1, 2, 3);
+  cout << "v1 = " << v1 << endl;
 
   version v2 = version::parse("10.11.12");
   cout << "v2 = " << v2 << endl;
