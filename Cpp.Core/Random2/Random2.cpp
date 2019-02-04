@@ -15,8 +15,7 @@ auto main() -> int {
   
   // Generate and display 5 random byte (integer) values.
   vector<uint8_t> bytes(5);
-  uniform_int_distribution<int32_t> rand_byte_distribution(0, numeric_limits<uint8_t>::max());
-  for_each(bytes.begin(), bytes.end(), [&](uint8_t& value) {value = static_cast<uint8_t>(rand_byte_distribution(rand));});
+  for_each(bytes.begin(), bytes.end(), [&](uint8_t& value) {value = static_cast<uint8_t>(uniform_int_distribution<int32_t> {0, numeric_limits<uint8_t>::max()}(rand));});
 
   cout << "Five random byte values:" << endl;
   for (uint8_t byteValue : bytes)
@@ -25,37 +24,32 @@ auto main() -> int {
   
   // Generate and display 5 random integers.
   cout << "Five random integer values:" << endl;
-  uniform_int_distribution<int32_t> rand_int_distribution(numeric_limits<int32_t>::min());
   for (int ctr = 0; ctr <= 4; ctr++)
-    cout << setw(15) << rand_int_distribution(rand);
+  cout << setw(15) << uniform_int_distribution<int32_t>{numeric_limits<int32_t>::min()}(rand);
   cout << endl;
   
   // Generate and display 5 random integers between 0 and 100.//
   cout << "Five random integers between 0 and 100:" << endl;
-  uniform_int_distribution<int32_t> rand_int_0_100_distribution(0, 100);
   for (int ctr = 0; ctr <= 4; ctr++)
-    cout << setw(10) << rand_int_0_100_distribution(rand);
+    cout << setw(10) << uniform_int_distribution<int32_t> {0, 100}(rand);
   cout << endl;
   
   // Generate and display 5 random integers from 50 to 100.
   cout << "Five random integers between 50 and 100:" << endl;
-  uniform_int_distribution<int32_t> rand_int_50_100_distribution(50, 100);
   for (int ctr = 0; ctr <= 4; ctr++)
-    cout << setw(10) << rand_int_50_100_distribution(rand);
+    cout << setw(10) << uniform_int_distribution<int32_t> {50, 100}(rand);
   cout << endl;
 
   // Generate and display 5 random floating point values from 0 to 1.
   cout << "Five Doubles:" << endl;
-  uniform_real_distribution<double> rand_double_distribution;
   for (int ctr = 0; ctr <= 4; ctr++)
-    cout << setw(10) << rand_double_distribution(rand);
+    cout << setw(10) << uniform_real_distribution<double>  {}(rand);
   cout << endl;
 
   // Generate and display 5 random floating point values from 0 to 5.
   cout << "Five Doubles between 0 and 5" << endl;
-  uniform_real_distribution<double> rand_double_0_5_distribution(0, 5);
   for (int ctr = 0; ctr <= 4; ctr++)
-    cout << setw(10) << rand_double_0_5_distribution(rand);
+    cout << setw(10) << uniform_real_distribution<double> {0, 5}(rand);
   cout << endl;
 }
 
