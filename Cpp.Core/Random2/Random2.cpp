@@ -15,8 +15,8 @@ auto main() -> int {
   
   // Generate and display 5 random byte (integer) values.
   vector<uint8_t> bytes(5);
-  uniform_int_distribution<uint8_t> rand_byte_distribution;
-  for_each(bytes.begin(), bytes.end(), [&](uint8_t& value) {value = rand_byte_distribution(rand_generator);});
+  uniform_int_distribution<int32_t> rand_byte_distribution(0, numeric_limits<uint8_t>::max());
+  for_each(bytes.begin(), bytes.end(), [&](uint8_t& value) {value = static_cast<uint8_t>(rand_byte_distribution(rand_generator));});
 
   cout << "Five random byte values:" << endl;
   for (uint8_t byteValue : bytes)
