@@ -1,7 +1,7 @@
 #include <exception>
 #include <iostream>
 #include <regex>
-#include <strstream>
+#include <sstream>
 #include <string>
 
 class version final {
@@ -50,7 +50,7 @@ public:
   std::string to_string(size_t field_count) const {
     if (field_count > 4 || (field_count >= 3 && this->build_ == -1) || (field_count == 4 && this->revision_ == -1))
       throw std::invalid_argument("field_count invalid");
-    std::strstream result;
+    std::stringstream result;
     if (field_count >= 1)
       result << std::to_string(this->major_);
     if (field_count >= 2)
