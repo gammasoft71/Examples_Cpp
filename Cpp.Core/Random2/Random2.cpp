@@ -11,7 +11,7 @@ using namespace std;
 // The main entry point for the application.
 auto main() -> int {
   // Instantiate random number generator using system-supplied value as seed.
-  minstd_rand rand_generator(random_device{}());
+  default_random_engine rand_generator(random_device{}());
   
   // Generate and display 5 random byte (integer) values.
   vector<uint8_t> bytes(5);

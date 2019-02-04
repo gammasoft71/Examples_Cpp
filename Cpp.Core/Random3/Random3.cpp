@@ -7,7 +7,7 @@ using namespace std;
 
 // The main entry point for the application.
 auto main() -> int {
-  minstd_rand rand_generator(random_device{}());
+  default_random_engine rand_generator(random_device{}());
   vector<string> male_pet_names = {"Rufus", "Bear", "Dakota", "Fido", "Vanya", "Samuel", "Koani", "Volodya", "Prince", "Yiska"};
   vector<string> female_pet_names = {"Maggie", "Penny", "Saya", "Princess", "Abby", "Laila", "Sadie", "Olivia", "Starlight", "Talla"};
 

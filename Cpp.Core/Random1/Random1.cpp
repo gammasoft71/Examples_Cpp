@@ -12,8 +12,8 @@ using namespace std;
 auto main() -> int {
   vector<uint8_t> bytes1(100);
   vector<uint8_t> bytes2(100);
-  minstd_rand rand_generator1(random_device{}());
-  minstd_rand rand_generator2(random_device{}());
+  default_random_engine rand_generator1(random_device{}());
+  default_random_engine rand_generator2(random_device{}());
   uniform_int_distribution<int32_t> rand_byte_distribution(0, numeric_limits<uint8_t>::max());
 
   for_each(bytes1.begin(), bytes1.end(), [&](uint8_t& value) {value = static_cast<int8_t>(rand_byte_distribution(rand_generator1));});
