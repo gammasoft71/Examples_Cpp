@@ -14,10 +14,10 @@ auto main() -> int {
   vector<uint8_t> bytes2(100);
   minstd_rand rand_generator1(random_device{}());
   minstd_rand rand_generator2(random_device{}());
-  uniform_int_distribution<uint8_t> rand_distribution(numeric_limits<uint8_t>::min(), numeric_limits<uint8_t>::max());
+  uniform_int_distribution<uint8_t> rand_byte_distribution;
 
-  for_each(bytes1.begin(), bytes1.end(), [&](uint8_t& value) {value = rand_distribution(rand_generator1);});
-  for_each(bytes2.begin(), bytes2.end(), [&](uint8_t& value) {value = rand_distribution(rand_generator2);});
+  for_each(bytes1.begin(), bytes1.end(), [&](uint8_t& value) {value = rand_byte_distribution(rand_generator1);});
+  for_each(bytes2.begin(), bytes2.end(), [&](uint8_t& value) {value = rand_byte_distribution(rand_generator2);});
 
   cout << "First Series:" << endl;
   for (size_t i = 0; i < bytes1.size(); i++) {
