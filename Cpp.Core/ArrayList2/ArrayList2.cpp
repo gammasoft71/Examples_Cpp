@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iostream>
 #include <string>
-#include <strstream>
+#include <sstream>
 #include <vector>
 
 using namespace std;
@@ -14,13 +14,13 @@ using namespace std::string_literals;
 using array_list = vector<any>;
 
 auto to_upper(const string& str) {
-  strstream result;
+  stringstream result;
   for_each(str.begin(), str.end(), [&](const char& value) {result << static_cast<char>(toupper(value));});
   return result.str();
 }
 
 auto join(const string& separator, const array_list& al) {
-  strstream result;
+  stringstream result;
   for (size_t index = 0; index < al.size(); ++index) {
     if (index != 0) result << separator;
     if (any_cast<string>(&al[index])) result << any_cast<string>(al[index]);
