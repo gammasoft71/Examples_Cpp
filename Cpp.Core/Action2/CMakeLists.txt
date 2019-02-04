@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.1)
+project(Action2)
+
+if (MSVC)
+elseif (APPLE)
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa")
+else(UNIX)
+  find_package(PkgConfig)
+  pkg_check_modules(GTKMM gtkmm-3.0)
+  include_directories(${GTKMM_INCLUDE_DIRS})
+  link_directories(${GTKMM_LIBRARY_DIRS})
+  link_libraries(${GTKMM_LIBRARIES})
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_executable(Action2 Action2.cpp MessageBox.h MessageBoxA.mm MessageBoxL.cpp MessageBoxW.cpp)
