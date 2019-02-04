@@ -10,5 +10,4 @@ auto main() -> int {
 
   wstring ws(s.size(), 0);
   mbstowcs(&ws[0], s.c_str(), s.size());
-
 }
