@@ -2,7 +2,7 @@
 #include <exception>
 #include <iostream>
 #include <memory>
-#include <strstream>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -22,7 +22,7 @@ auto main() -> int {
   s1 = any_cast<string>(a);
   cout << "a = string, any_cast<string>(a) = " << s1 << endl;
 
-  strstream sstr;
+  stringstream sstr;
   try {
     s1 = dynamic_cast<string&>(sstr);
     cout << "dynamic_cast<string&>(sstr) = " << s1 << endl;
@@ -30,7 +30,7 @@ auto main() -> int {
     cout << "Bad cast : " << e.what() << " !" << endl;
   }
 
-  shared_ptr<strstream> sp = make_shared<strstream>();
+  shared_ptr<stringstream> sp = make_shared<stringstream>();
   shared_ptr<string> str = dynamic_pointer_cast<string>(sp);
   if (str == nullptr)
     cout << "Bad cast!" << endl;
