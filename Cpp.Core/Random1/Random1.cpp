@@ -12,12 +12,12 @@ using namespace std;
 auto main() -> int {
   vector<uint8_t> bytes1(100);
   vector<uint8_t> bytes2(100);
-  default_random_engine rand_generator1(random_device{}());
-  default_random_engine rand_generator2(random_device{}());
+  random_device rand1;
+  random_device rand2;
   uniform_int_distribution<int32_t> rand_byte_distribution(0, numeric_limits<uint8_t>::max());
 
-  for_each(bytes1.begin(), bytes1.end(), [&](uint8_t& value) {value = static_cast<int8_t>(rand_byte_distribution(rand_generator1));});
-  for_each(bytes2.begin(), bytes2.end(), [&](uint8_t& value) {value = static_cast<uint8_t>(rand_byte_distribution(rand_generator2));});
+  for_each(bytes1.begin(), bytes1.end(), [&](uint8_t& value) {value = static_cast<int8_t>(rand_byte_distribution(rand1));});
+  for_each(bytes2.begin(), bytes2.end(), [&](uint8_t& value) {value = static_cast<uint8_t>(rand_byte_distribution(rand2));});
 
   cout << "First Series:" << endl;
   for (size_t i = 0; i < bytes1.size(); i++) {
