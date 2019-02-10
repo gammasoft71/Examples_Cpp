@@ -1,10 +1,16 @@
 #include <iostream>
-#include <cstdio>
 #include <string>
 #include <vector>
 
+#include "Console.hpp"
+
+/// @remarks To enable ANSI colors on Windows, add following key in the registry :
+/// [HKEY_CURRENT_USER\Console] "VirtualTerminalLevel"=dword:00000001
+
+using namespace console;
 using namespace std;
 
+// The main entry point for the application.
 auto main() -> int {
   const vector logo = {
     "████████████████████████████████████████████████████████████",
@@ -41,26 +47,19 @@ auto main() -> int {
     "██████████████████████████████████████████████████████████████████",
   };
   
-  const auto backgroundWhite = "\033[47m";
-  const auto backgroundReset = "\033[49m";
-  const auto foregroundDarkGray = "\033[90m";
-  const auto foregroundDarkBlue = "\033[94m";
-  const auto foregroundReset = "\033[39m";
-  
   for (int index = 0; index < logo.size(); ++index) {
     cout << (index == 0 || index == logo.size() - 1 ? "       " : "     ");
-    cout << foregroundDarkBlue;
-    cout << backgroundWhite;
+    background_color(console_color::white);
+    foreground_color(console_color::dark_blue);
     cout << logo[index];
-    cout << foregroundReset;
-    cout << backgroundReset;
+    console::reset_color();
     cout << endl;
-    }
+  }
     
-    cout << foregroundDarkBlue;
-    cout << "                                    Gammasoft                                   " << endl;
-    cout << foregroundDarkGray;
-    cout << " More than thirty years of passion for high technology especially in development" << endl;
-    cout << " (c++, c#, objective-c, ...)." << endl;
-    cout << foregroundReset;
+  foreground_color(console_color::dark_blue);
+  cout << "                                    Gammasoft                                   " << endl;
+  foreground_color(console_color::dark_gray);
+  cout << " More than thirty years of passion for high technology especially in development" << endl;
+  cout << " (c++, c#, objective-c, ...)." << endl;
+  reset_color();
 }

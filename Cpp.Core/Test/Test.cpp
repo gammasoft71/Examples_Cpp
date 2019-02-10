@@ -93,4 +93,8 @@ auto main() -> int {
 
   version v2 = version::parse("10.11.12");
   cout << "v2 = " << v2 << endl;
+  
+  ostream& out = cout;
+  
+  out << "Hello, world!" << endl;
 }
